@@ -380,7 +380,8 @@ void ZigBeeComponent::esp_zb_task() {
     this->mark_failed();
     vTaskDelete(NULL);
   }
-
+  
+  esp_zb_secur_network_min_join_lqi_set(0);
   esp_zb_stack_main_loop();
 }
 
